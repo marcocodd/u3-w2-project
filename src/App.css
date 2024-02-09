@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  height: 100vh; /* Altezza uguale all'altezza della finestra */
+   /* Altezza uguale all'altezza della finestra */
+background-color: #282c34!important;
 
 }
 
