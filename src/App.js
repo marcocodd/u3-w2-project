@@ -18,18 +18,17 @@ function App() {
   };
   
   return (
-    <div data-bs-theme="dark" className="App bg-dark vw-100">
-      <BrowserRouter>  
-      <Container>
-     <MeteoNavBar word={handleSearchedWord}/>
+   <div data-bs-theme="dark" className="App bg-dark vw-100 h-100">
+    <BrowserRouter>
+     <Container>
+      <MeteoNavBar word={handleSearchedWord} />
       <Routes>
-        <Route path='/' element={<WeatherMain/>}/>
-        <Route path="/search/:wordSearch" element={<SearchedPage />} />
-     
-     </Routes>
+       <Route path="/" element={<WeatherMain />} />
+       <Route path="/search/:wordSearch" element={<SearchedPage />} />
+      </Routes>
      </Container>
-     </BrowserRouter>
-    </div>
+    </BrowserRouter>
+   </div>
   );
 }
 
