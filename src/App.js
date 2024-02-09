@@ -8,6 +8,9 @@ import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SearchedPage from "./Components/SearchedPage";
 
+
+// manca componente per le regioni italiane causa tempo
+
 function App() {
   const [SearchedInput, setSearchedInput] = useState('')
   const handleSearchedWord = (word) => {
