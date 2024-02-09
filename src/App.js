@@ -10,7 +10,7 @@ import SearchedPage from "./Components/SearchedPage";
 
 
 // manca componente per le regioni italiane causa tempo
-
+// con la versione free dell'api non riuscivo comunque ad avere i dati meteo settimanali e ho provato a fare un for di fetch in searchedPage...
 function App() {
   const [SearchedInput, setSearchedInput] = useState('')
   const handleSearchedWord = (word) => {
