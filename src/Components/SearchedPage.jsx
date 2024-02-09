@@ -82,46 +82,73 @@ const SearchedPage = () => {
 
 
     return (
-        <Container fluid className="bg-dark text-white">
-            <h1>Meteo {wordSearch}</h1>
-            <Row className="justify-content-center">
-                <Col className="col-sm-6 col-md-4 col-lg-6 p-0">
-                    <img width={400} src={italyMap} alt="mappa italia" className="img-fluid img-thumbnail" />
-                </Col>
-                <Col>
-                    {todayWeather && (
-                        <Card>
-                            <Card.Title>Previsioni Oggi</Card.Title>
-                            <Card.Img id="img-meteo" variant="top" src={todayWeather && `http://openweathermap.org/img/wn/${todayWeather.weather[0].icon}.png`} />
-                            <Card.Body>
-                                <ListGroup variant="flush">
-                                    <ListGroup.Item>Temperatura minima: ℃ {todayWeather.main.temp_min} </ListGroup.Item>
-                                    <ListGroup.Item>Temperatura massima: ℃ {todayWeather.main.temp_max} </ListGroup.Item>
-                                    <ListGroup.Item>Umidità: {todayWeather.main.humidity}%</ListGroup.Item>
-                                </ListGroup>
-                            </Card.Body>
-                        </Card>
-                    )}
-                </Col>
-            </Row>
-            <Row className="justify-content-center mt-4 g-3">
-            {weekWeather.map((dayWeather, index) => (
-                <Col key={index} className="col-sm-6 col-md-4 col-lg-3">
-                    <Card>
-                    <Card.Title>Previsioni per {new Date(dayWeather.dt * 1000).toLocaleDateString()}</Card.Title>
-                        <Card.Body>
-                            <ListGroup variant="flush">
-                                <ListGroup.Item>Temperatura minima: ℃ {dayWeather.main.temp_min} </ListGroup.Item>
-                                <ListGroup.Item>Temperatura massima: ℃ {dayWeather.main.temp_max} </ListGroup.Item>
-                                <ListGroup.Item>Umidità: {dayWeather.main.humidity}%</ListGroup.Item>
-                            </ListGroup>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            ))}
-        </Row>
-        </Container>
-    )
+     <Container fluid className="bg-dark text-white">
+      <h1>Meteo {wordSearch}</h1>
+      <Row className="justify-content-center">
+       <Col className="col-sm-6 col-md-4 col-lg-6 p-0">
+        <img
+         width={400}
+         src={italyMap}
+         alt="mappa italia"
+         className="img-fluid img-thumbnail"
+        />
+       </Col>
+       <Col>
+        {todayWeather && (
+         <Card>
+          <Card.Title>Previsioni Oggi</Card.Title>
+          <Card.Img
+           id="img-meteo"
+           variant="top"
+           src={
+            todayWeather &&
+            `http://openweathermap.org/img/wn/${todayWeather.weather[0].icon}.png`
+           }
+          />
+          <Card.Body>
+           <ListGroup variant="flush">
+            <ListGroup.Item>
+             Temperatura minima: ℃ {todayWeather.main.temp_min}{" "}
+            </ListGroup.Item>
+            <ListGroup.Item>
+             Temperatura massima: ℃ {todayWeather.main.temp_max}{" "}
+            </ListGroup.Item>
+            <ListGroup.Item>
+             Umidità: {todayWeather.main.humidity}%
+            </ListGroup.Item>
+           </ListGroup>
+          </Card.Body>
+         </Card>
+        )}
+       </Col>
+      </Row>
+      <Row className="justify-content-center mt-4 g-3">
+       {weekWeather.map((dayWeather, index) => (
+        <Col key={index} className="col-sm-6 col-md-4 col-lg-3">
+         <Card>
+          {/* Previsioni per provvisorio, vorrei fare un array con i giorni della settimana ma non ho avuto tempo */}
+          <Card.Title>
+           Previsioni per {new Date(dayWeather.dt * 1000).toLocaleDateString()}
+          </Card.Title>
+          <Card.Body>
+           <ListGroup variant="flush">
+            <ListGroup.Item>
+             Temperatura minima: ℃ {dayWeather.main.temp_min}{" "}
+            </ListGroup.Item>
+            <ListGroup.Item>
+             Temperatura massima: ℃ {dayWeather.main.temp_max}{" "}
+            </ListGroup.Item>
+            <ListGroup.Item>
+             Umidità: {dayWeather.main.humidity}%
+            </ListGroup.Item>
+           </ListGroup>
+          </Card.Body>
+         </Card>
+        </Col>
+       ))}
+      </Row>
+     </Container>
+    );
 }
 
 export default SearchedPage
