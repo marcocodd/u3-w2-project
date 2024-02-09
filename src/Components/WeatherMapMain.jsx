@@ -39,37 +39,49 @@ console.log('MeteoArray', weatherItaly)
 
 
 
-    return(
-
-    <Container className="bg-dark text-white">
-        <h1>Meteo Italia</h1>
-        <Row className="justify-content-center">
-            <Col className="col-sm-6 col-md-4 col-lg-6 p-0">
-                <img width={400} src={italyMap} alt="mappa italia" className="img-fluid img-thumbnail"/>
-
-            </Col>
-         <Col>
-         {weatherItaly &&(
+    return (
+     <Container className="bg-dark text-white">
+      <h1>Meteo Italia</h1>
+      <Row className="justify-content-center">
+       <Col className="col-sm-6 col-md-4 col-lg-6 p-0">
+        <img
+         width={400}
+         src={italyMap}
+         alt="mappa italia"
+         className="img-fluid img-thumbnail"
+        />
+       </Col>
+       <Col>
+        {weatherItaly && (
          <Card>
-        <Card.Title>Previsioni medie Oggi</Card.Title>
-         <Card.Img id="img-meteo" variant="top" src={weatherItaly && `http://openweathermap.org/img/wn/${weatherItaly.weather[0].icon}.png`} />
-      <Card.Body>
-    
-        <ListGroup variant="flush">
-      <ListGroup.Item>Temperatura minima: ℃ {weatherItaly.main.temp_min} </ListGroup.Item>
-      <ListGroup.Item>Temperatura massima: ℃ {weatherItaly.main.temp_max} </ListGroup.Item>
-      <ListGroup.Item>Umidità: {weatherItaly.main.humidity}%</ListGroup.Item>
-      
-    </ListGroup>
-       
-   
-      </Card.Body>
-    </Card>
-    )}
-         </Col>
-        </Row>
-    </Container>
-    )
+          <Card.Title>Previsioni medie Oggi</Card.Title>
+          <Card.Img
+           id="img-meteo"
+           variant="top"
+           src={
+            weatherItaly &&
+            `http://openweathermap.org/img/wn/${weatherItaly.weather[0].icon}.png`
+           }
+          />
+          <Card.Body>
+           <ListGroup variant="flush">
+            <ListGroup.Item>
+             Temperatura minima: ℃ {weatherItaly.main.temp_min}{" "}
+            </ListGroup.Item>
+            <ListGroup.Item>
+             Temperatura massima: ℃ {weatherItaly.main.temp_max}{" "}
+            </ListGroup.Item>
+            <ListGroup.Item>
+             Umidità: {weatherItaly.main.humidity}%
+            </ListGroup.Item>
+           </ListGroup>
+          </Card.Body>
+         </Card>
+        )}
+       </Col>
+      </Row>
+     </Container>
+    );
 }
 
 export default WeatherMain

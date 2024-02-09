@@ -18,7 +18,7 @@ function App() {
   };
   
   return (
-   <div data-bs-theme="dark" className="App bg-dark vw-100 h-100">
+   <div data-bs-theme="dark" className="App bg-dark h-100">
     <BrowserRouter>
      <Container>
       <MeteoNavBar word={handleSearchedWord} />
